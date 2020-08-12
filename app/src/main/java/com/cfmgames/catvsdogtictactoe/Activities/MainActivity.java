@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.cfmgames.catvsdogtictactoe.R;
+import com.facebook.ads.AudienceNetworkAds;
 
 import gr.net.maroulis.library.EasySplashScreen;
 
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AudienceNetworkAds.initialize(this);
 
         View easySplashScreenView = new EasySplashScreen(MainActivity.this)
                 .withFullScreen()
