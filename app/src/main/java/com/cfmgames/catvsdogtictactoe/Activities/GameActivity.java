@@ -2,28 +2,24 @@ package com.cfmgames.catvsdogtictactoe.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.LinearLayout;
 
 import com.cfmgames.catvsdogtictactoe.R;
 
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
-import com.facebook.ads.InterstitialAd;
 
-public class TitleActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
-    private AdView adView;
-    private InterstitialAd interstitialAd;
+    public AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_title);
+        setContentView(R.layout.activity_game);
 
-        adView = new AdView(this, "IMG_16_9_APP_INSTALL#352186359111923_352186625778563", AdSize.BANNER_HEIGHT_50);
+        adView = new AdView(this, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID", AdSize.BANNER_HEIGHT_50);
 
         // Find the Ad Container
         LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
@@ -36,20 +32,15 @@ public class TitleActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed(){
+        finish();
+    }
+
+    @Override
     protected void onDestroy() {
         if (adView != null) {
             adView.destroy();
         }
-        if (interstitialAd != null) {
-            interstitialAd.destroy();
-        }
         super.onDestroy();
-    }
-
-    public void newTwoPlayer(View view) {
-
-        Intent i = new Intent(TitleActivity.this, GameActivity.class);
-        startActivity(i);
-
     }
 }

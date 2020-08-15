@@ -42,6 +42,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="229dp"
         android:contentDescription="@string/two_player_desc"
+        android:onClick="newTwoPlayer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
