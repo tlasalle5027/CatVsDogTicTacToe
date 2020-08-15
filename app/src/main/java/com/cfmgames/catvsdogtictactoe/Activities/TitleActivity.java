@@ -2,6 +2,8 @@ package com.cfmgames.catvsdogtictactoe.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -44,6 +46,30 @@ public class TitleActivity extends AppCompatActivity {
             interstitialAd.destroy();
         }
         super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed(){
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which){
+                    case DialogInterface.BUTTON_POSITIVE:
+                        finish();
+                        System.exit(0);
+                        break;
+
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        //Cancel
+                        break;
+                }
+            }
+        };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Do you want to exit Cat vs. Dog - Tic Tac Toe?")
+                .setPositiveButton("Yes", dialogClickListener)
+                .setNegativeButton("No", dialogClickListener).show();
     }
 
     public void newTwoPlayer(View view) {
