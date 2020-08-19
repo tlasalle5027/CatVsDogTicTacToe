@@ -3,6 +3,7 @@ package com.cfmgames.catvsdogtictactoe.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.cfmgames.catvsdogtictactoe.R;
@@ -42,5 +43,9 @@ public class GameActivity extends AppCompatActivity {
             adView.destroy();
         }
         super.onDestroy();
+    }
+
+    public void placeToken(View view) {
+
     }
 }
