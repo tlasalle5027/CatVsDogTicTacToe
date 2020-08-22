@@ -135,6 +135,7 @@ public class TitleActivity extends AppCompatActivity {
             interstitialAd.show();
         }
         Intent i = new Intent(TitleActivity.this, GameActivity.class);
+        i.putExtra("twoPlayer", true);
         startActivity(i);
 
     }

@@ -3,4 +3,6 @@
     <string name="logo_desc">Cat vs. Dog Tic Tac Toe Logo</string>
     <string name="one_player_desc">One Player Game button with cat token</string>
     <string name="two_player_desc">Two player game button with cat token and dog token</string>
+    <string name="new_game">New Game</string>
+    <string name="quit_game">Quit Game</string>
 </resources>

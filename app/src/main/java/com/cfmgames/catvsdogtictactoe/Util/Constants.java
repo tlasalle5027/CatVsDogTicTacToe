@@ -2,7 +2,7 @@ package com.cfmgames.catvsdogtictactoe.Util;
 
 public class Constants {
 
-    //Difficulty settinga
+    //Difficulty settings
     public static final int EASY = 1;
     public static final int INTERMEDIATE = 2;
     public static final int HARD = 3;

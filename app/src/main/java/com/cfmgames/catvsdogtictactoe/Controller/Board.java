@@ -2,7 +2,7 @@ package com.cfmgames.catvsdogtictactoe.Controller;
 
 public class Board {
 
-    public int[][] board;
+    public int[][] board = new int[3][3];
 
     /**
      * This constructor creates a completely blank
@@ -40,6 +40,16 @@ public class Board {
     }
 
     /**
+     * Return the token occupying this space as a String
+     * @param x x coordinate
+     * @param y y coordinate
+     * @return The player number as a string
+     */
+    public String getToken(int x, int y){
+        return String.valueOf(board[x][y]);
+    }
+
+    /**
      * Clear the game board completely
      */
     public void clearBoard(){
@@ -47,7 +57,6 @@ public class Board {
             for(int y = 0; y <= 2; y++){
                 board[x][y] = 0;
             }
-
         }
     }
 }
